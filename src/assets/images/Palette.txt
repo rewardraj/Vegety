@@ -1,0 +1,39 @@
+/* CSS HEX */
+--log-cabin: #22251b;
+--husk: #a2ab47;
+--aqua-haze: #f4f9f8;
+--medium-carmine: #ac4e30;
+--olive-drab: #64a22f;
+--lemon-grass: #979b94;
+--winter-hazel: #d4d09b;
+--sorrell-brown: #cda891;
+--pumice: #c4c6c4;
+--swiss-coffee: #d9d1d1;
+
+
+/* SCSS HEX */
+$log-cabin: #22251b;
+$husk: #a2ab47;
+$aqua-haze: #f4f9f8;
+$medium-carmine: #ac4e30;
+$olive-drab: #64a22f;
+$lemon-grass: #979b94;
+$winter-hazel: #d4d09b;
+$sorrell-brown: #cda891;
+$pumice: #c4c6c4;
+$swiss-coffee: #d9d1d1;
+
+
+/* SCSS RGB */
+--log-cabin: rgba(34,37,27,1);
+--husk: rgba(162,171,71,1);
+--aqua-haze: rgba(244,249,248,1);
+--medium-carmine: rgba(172,78,48,1);
+--olive-drab: rgba(100,162,47,1);
+--lemon-grass: rgba(151,155,148,1);
+--winter-hazel: rgba(212,208,155,1);
+--sorrell-brown: rgba(205,168,145,1);
+--pumice: rgba(196,198,196,1);
+--swiss-coffee: rgba(217,209,209,1);
+
+
