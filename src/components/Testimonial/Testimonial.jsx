@@ -32,21 +32,57 @@ const Testimonial = () => {
 
   return (
     <section className="testimonial__Section">
-      <div className="ctaOne__Text">
-        <h3>What Our Customers Say</h3>
+      <div className="testimonial-heading">
+        <span>Comments</span>
+        <h1>Clients Says</h1>
       </div>
-    <TransitionGroup className="customer-reviews">
-      <CSSTransition key={reviewIndex} timeout={800} classNames="review">
-        <div>
-          <img src={review.photo} alt={`${review.name}'s photo`} />
-          <div className="review-text">
-            <p>"{review.text}"</p>
-            <p>- {review.name}</p>
-          </div>
-        </div>
-      </CSSTransition>
-    </TransitionGroup>
+      <div className="testimonial-box-container">
+        {reviews.map((review, index) => (
+          <TestimonialBox key={index} review={review} />
+        ))}
+      </div>
     </section>
+  );
+};
+
+const TestimonialBox = ({ review }) => {
+  const { name, text, photo } = review;
+
+  return (
+    <div className="testimonial-box">
+      <div className="box-top">
+        <Profile name={name} photo={photo} />
+        <Reviews />
+      </div>
+      <div className="client-comment">
+        <p>{text}</p>
+      </div>
+    </div>
+  );
+};
+
+const Profile = ({ name, photo }) => {
+  return (
+    <div className="profile">
+      <div className="profile-img">
+        <img src={photo} alt={name} />
+      </div>
+      <div className="name-user">
+        <strong>{name}</strong>
+      </div>
+    </div>
+  );
+};
+
+const Reviews = () => {
+  return (
+    <div className="reviews">
+      <i className="fas fa-star"></i>
+      <i className="fas fa-star"></i>
+      <i className="fas fa-star"></i>
+      <i className="fas fa-star"></i>
+      <i className="far fa-star"></i>
+    </div>
   );
 };
 

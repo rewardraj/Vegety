@@ -12,7 +12,9 @@ import Testimonial from '../components/Testimonial/Testimonial.jsx'
 
 const Home = () => {
   return (
-    <div>
+    <div style={{
+  
+    }}>
        <Navbar />
        <Hero />
        <Intro />
