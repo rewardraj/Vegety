@@ -601,6 +601,6 @@
 
 
 .testimonial__Control {
-  padding: var(--whitespace) var(--whitespace);
+  padding: var(--gutter) var(--whitespace);
   min-height: 70vh;
 }
