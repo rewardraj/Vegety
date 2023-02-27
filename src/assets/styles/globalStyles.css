@@ -600,3 +600,7 @@
 }
 
 
+.testimonial__Control {
+  padding: var(--whitespace) var(--whitespace);
+  min-height: 70vh;
+}

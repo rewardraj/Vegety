@@ -1,89 +1,94 @@
-import React, { useState, useEffect } from "react";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import happyCustomer1 from '../../assets/images/customerRed.jpg';
 
 const Testimonial = () => {
-  const [reviewIndex, setReviewIndex] = useState(0);
-  const reviews = [
-    {
-      name: "John Doe",
-      text: "This product is amazing! I highly recommend it.",
-      photo: "/src/assets/images/customer1.jpeg",
-    },
-    {
-      name: "Jane Doe",
-      text: "I've been using this product for a while now and I am so happy with it.",
-      photo: "/src/assets/images/customer2.jpeg",
-    },
-    {
-      name: "Bob Smith",
-      text: "I never write reviews, but this product is just that good. 10/10!",
-      photo: "/src/assets/images/customer3.jpeg",
-    },
-  ];
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setReviewIndex((reviewIndex + 1) % reviews.length);
-    }, 3000);
-    return () => clearInterval(intervalId);
-  }, [reviewIndex, reviews.length]);
-
-  const review = reviews[reviewIndex];
-
   return (
-    <section className="testimonial__Section">
-      <div className="testimonial-heading">
-        <span>Comments</span>
-        <h1>Clients Says</h1>
+    <section className='testimonial__Control'>
+      <div className='testimonial__Header'>
+        <h3 className='header__Intro' style={{
+          fontSize: 'var(--text-md)',
+          textAlign: 'left',
+          fontWeight: '700',
+          padding: 'var(--gutter) var(--gutter)',
+          lineHeight: 'var(--line-height-default)',
+          width: 'max-content'
+        }}>Trusted by thousands <br /> of customers</h3>
       </div>
-      <div className="testimonial-box-container">
-        {reviews.map((review, index) => (
-          <TestimonialBox key={index} review={review} />
-        ))}
+      <div className='testimonial__Content' style={{
+        display: 'flex',
+        width: '100%',
+        gap: 'var(--gutter)',
+      }}>
+        <div className='testimonial__Left' style={{flexBasis: '40%'}}>
+          <div className='left' style={{display: 'flex', flexDirection:'column', gap:'20px'}}>
+            <div className='first' style={{
+              fontSize: 'var(--text-sm)',
+              textAlign: 'left',
+              padding: 'var(--default) var(--gutter)',
+              borderRadius: '10px',
+              boxShadow: 'rgb(0 0 0 / 30%) 0px 12px 14px',
+              lineHeight: 'var(--line-height-default)',
+              width:'max-content',
+              backgroundColor: '#eaf1ef' 
+            }}>
+              <FontAwesomeIcon  icon={faStar} color='gold' />
+              <FontAwesomeIcon  icon={faStar} color='gold' />
+              <FontAwesomeIcon  icon={faStar} color='gold' />
+              <FontAwesomeIcon  icon={faStar} color='gold' />
+              <p>"Awesome food, value for the money"</p>
+            </div>
+
+            <div className='opposite' style={{
+              fontSize: 'var(--text-sm)',
+              textAlign: 'left',
+              marginLeft: 'auto',
+              marginRight: '0',
+              padding: 'var(--gutter) var(--gutter)',
+              borderRadius: '10px',
+              boxShadow: 'rgb(0 0 0 / 30%) 0px 12px 14px',
+              lineHeight: 'var(--line-height-default)',
+              width:'max-content',
+              backgroundColor: '#eaf1ef' 
+            }}>
+              <FontAwesomeIcon  icon={faStar} color='gold' />
+              <FontAwesomeIcon  icon={faStar} color='gold' />
+              <FontAwesomeIcon  icon={faStar} color='gold' />
+              <FontAwesomeIcon  icon={faStar} color='gold' />
+              <p>"Awesome food, value for the money"</p>
+            </div>
+            
+
+            <div className='first' style={{
+              fontSize: 'var(--text-sm)',
+              textAlign: 'left',
+              padding: 'var(--gutter) var(--gutter)',
+              borderRadius: '10px',
+              boxShadow: 'rgb(0 0 0 / 30%) 0px 12px 14px',
+              lineHeight: 'var(--line-height-default)',
+              width:'max-content',
+              backgroundColor: '#eaf1ef' 
+            }}>
+              <FontAwesomeIcon  icon={faStar} color='gold' />
+              <FontAwesomeIcon  icon={faStar} color='gold' />
+              <FontAwesomeIcon  icon={faStar} color='gold' />
+              <FontAwesomeIcon  icon={faStar} color='gold' />
+              <p>"Awesome food, value for the money"</p>
+            </div>
+          </div>
+          
+        </div>
+        <div className='testimonial__Right'>
+          <div className='right image'>
+            <img src={happyCustomer1} height={450} width={600} aria-hidden alt='happy customer dark'/>
+          </div>
+          <div className='left top'></div>
+          <div className='left bottom'></div>
+        </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-const TestimonialBox = ({ review }) => {
-  const { name, text, photo } = review;
-
-  return (
-    <div className="testimonial-box">
-      <div className="box-top">
-        <Profile name={name} photo={photo} />
-        <Reviews />
-      </div>
-      <div className="client-comment">
-        <p>{text}</p>
-      </div>
-    </div>
-  );
-};
-
-const Profile = ({ name, photo }) => {
-  return (
-    <div className="profile">
-      <div className="profile-img">
-        <img src={photo} alt={name} />
-      </div>
-      <div className="name-user">
-        <strong>{name}</strong>
-      </div>
-    </div>
-  );
-};
-
-const Reviews = () => {
-  return (
-    <div className="reviews">
-      <i className="fas fa-star"></i>
-      <i className="fas fa-star"></i>
-      <i className="fas fa-star"></i>
-      <i className="fas fa-star"></i>
-      <i className="far fa-star"></i>
-    </div>
-  );
-};
-
-export default Testimonial;
+export default Testimonial
